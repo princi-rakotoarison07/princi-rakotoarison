@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sable-beige: #FDF6E3;
+  --color-sable-white: #FFFFFF;
+  --color-sable-terracotta: #E2B4A2;
+  --color-sable-terracotta-dark: #D19D8A;
+  --color-sable-brown: #4A3B32;
+  --color-sable-brown-light: #6A5B52;
+  
+  --font-sans: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  body {
+    background-color: var(--color-sable-white);
+    color: var(--color-sable-brown);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Custom selection color */
+  ::selection {
+    background-color: var(--color-sable-terracotta);
+    color: var(--color-sable-white);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--color-sable-white);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-sable-terracotta);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-sable-brown-light);
+  }
+}
+
+/* Glassmorphism utility */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(226, 180, 162, 0.2);
+}
+
+.glass-card {
+  background: rgba(253, 246, 227, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(226, 180, 162, 0.3);
+}
+
+/* Smooth transition utility */
+.transition-all-custom {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom CSS animations */
+@keyframes slow-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slow-spin-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes float-subtle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+@keyframes float-slower {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(-4deg); }
+}
+
+@keyframes float-faster {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-7px) rotate(2deg); }
+}
+
+.animate-slow-spin {
+  animation: slow-spin 20s linear infinite;
+}
+
+.animate-slow-spin-reverse {
+  animation: slow-spin-reverse 25s linear infinite;
+}
+
+.animate-float {
+  animation: float-subtle 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slower 8s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-faster 5s ease-in-out infinite;
+}
+
