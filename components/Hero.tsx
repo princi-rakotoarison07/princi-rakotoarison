@@ -113,8 +113,8 @@ export default function Hero() {
               className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-12"
             >
               <a
-                href="/pdf/cv1_princirakotoarison.pdf"
-                download="cv1_princirakotoarison.pdf"
+                href="/pdf/PRINCI_RAKOTOARISON_CV.pdf"
+                download="PRINCI_RAKOTOARISON_CV.pdf"
                 className="group flex items-center justify-center gap-2.5 bg-sable-terracotta hover:bg-sable-terracotta-dark text-sable-white font-medium px-8 py-3.5 rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 w-full sm:w-auto"
               >
                 <span>Télécharger mon CV</span>
