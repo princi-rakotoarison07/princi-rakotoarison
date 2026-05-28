@@ -165,45 +165,46 @@ export default function Hero() {
           
           {/* Profile Image & Animated Circle */}
           <div className="lg:col-span-5 flex justify-center items-center order-1 lg:order-2">
-            <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px]">
+            <div className="relative w-[220px] h-[220px] sm:w-[260px] sm:h-[260px] md:w-[320px] md:h-[320px]">
               
               {/* Profile Image Wrapper */}
-              <div className="w-[260px] h-[260px] sm:w-[325px] sm:h-[325px] md:w-[370px] md:h-[370px] absolute inset-0 m-auto z-10 overflow-hidden rounded-full border-4 border-sable-white shadow-xl bg-sable-beige">
+              <div className="w-[200px] h-[200px] sm:w-[235px] sm:h-[235px] md:w-[290px] md:h-[290px] absolute inset-0 m-auto z-10 overflow-hidden rounded-full border-4 border-sable-white shadow-xl bg-sable-beige">
                 <Image
                   src={personalInfo.image}
                   priority
                   quality={100}
                   fill
-                  sizes="(max-w-768px) 300px, 400px"
+                  sizes="(max-w-768px) 240px, 320px"
                   alt={personalInfo.name}
                   className="object-cover scale-105 hover:scale-110 transition-transform duration-700"
+                  style={{ objectPosition: 'center top' }}
                 />
               </div>
 
               {/* Inner Soft Breathing Halo Circle with inner shadow */}
-              <div className="absolute inset-4 rounded-full bg-sable-beige shadow-inner border border-sable-terracotta/10 -z-10" />
+              <div className="absolute inset-3 rounded-full bg-sable-beige shadow-inner border border-sable-terracotta/10 -z-10" />
 
               {/* Double Rotating Terracotta Rings (Continuous CSS) */}
               <div className="absolute inset-0 rounded-full border-2 border-dashed border-sable-terracotta animate-slow-spin -z-20 scale-[1.04]" />
-              <div className="absolute inset-3 rounded-full border border-dotted border-sable-terracotta/70 animate-slow-spin-reverse -z-20 scale-[1.02] rotate-[45deg]" />
+              <div className="absolute inset-2.5 rounded-full border border-dotted border-sable-terracotta/70 animate-slow-spin-reverse -z-20 scale-[1.02] rotate-[45deg]" />
 
               {/* Floating Decorative Elements */}
               {/* Floating Arc Top-Left */}
-              <div className="absolute -top-3 -left-3 w-12 h-12 text-sable-terracotta/80 animate-float z-20">
+              <div className="absolute -top-2 -left-2 w-10 h-10 text-sable-terracotta/80 animate-float z-20">
                 <svg viewBox="0 0 100 100" fill="none" className="w-full h-full stroke-current stroke-[6] stroke-linecap-round">
                   <path d="M 15 85 A 70 70 0 0 1 85 15" />
                 </svg>
               </div>
 
               {/* Floating Arc Bottom-Right */}
-              <div className="absolute -bottom-5 -right-5 w-14 h-14 text-sable-terracotta/70 animate-float-slow z-20">
+              <div className="absolute -bottom-3.5 -right-3.5 w-11 h-11 text-sable-terracotta/70 animate-float-slow z-20">
                 <svg viewBox="0 0 100 100" fill="none" className="w-full h-full stroke-current stroke-[4] stroke-linecap-round">
                   <path d="M 85 15 A 70 70 0 0 1 15 85" />
                 </svg>
               </div>
 
               {/* Floating Dots Grid Top-Right */}
-              <div className="absolute top-12 -right-6 flex flex-wrap w-8 h-8 gap-1.5 animate-float-fast z-20">
+              <div className="absolute top-10 -right-4 flex flex-wrap w-7 h-7 gap-1.5 animate-float-fast z-20">
                 <div className="w-1.5 h-1.5 rounded-full bg-sable-terracotta" />
                 <div className="w-1.5 h-1.5 rounded-full bg-sable-terracotta" />
                 <div className="w-1.5 h-1.5 rounded-full bg-sable-terracotta" />
@@ -211,7 +212,7 @@ export default function Hero() {
               </div>
 
               {/* Floating Plus Symbol Bottom-Left */}
-              <div className="absolute bottom-16 -left-8 text-sable-terracotta text-2xl font-light animate-float z-20 select-none">
+              <div className="absolute bottom-12 -left-5 text-sable-terracotta text-xl font-light animate-float z-20 select-none">
                 +
               </div>
             </div>
