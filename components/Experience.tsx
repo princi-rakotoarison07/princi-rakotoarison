@@ -144,9 +144,23 @@ export default function Experience() {
                         opacity: isOpen ? 1 : 0 
                       }}
                     >
-                      <p className="text-sm text-sable-brown-light leading-relaxed pt-2">
-                        {item.description}
-                      </p>
+                      <div className="pt-2 pb-1">
+                        <p className="text-sm text-sable-brown-light leading-relaxed mb-4">
+                          {item.description}
+                        </p>
+                        {item.technologies && item.technologies.length > 0 && (
+                          <div className="flex flex-wrap gap-1.5" onClick={(e) => e.stopPropagation()}>
+                            {item.technologies.map((tech) => (
+                              <span
+                                key={tech}
+                                className="text-[10px] md:text-xs font-semibold tracking-wide bg-sable-beige text-sable-terracotta px-2.5 py-1 rounded-md border border-sable-terracotta/10"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
                 );

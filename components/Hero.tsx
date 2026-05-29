@@ -172,9 +172,9 @@ export default function Hero() {
                 <Image
                   src={personalInfo.image}
                   priority
-                  quality={100}
+                  quality={75}
                   fill
-                  sizes="(max-w-768px) 240px, 320px"
+                  sizes="(max-w-640px) 200px, (max-w-768px) 235px, 290px"
                   alt={personalInfo.name}
                   className="object-cover scale-105 hover:scale-110 transition-transform duration-700"
                   style={{ objectPosition: 'center top' }}

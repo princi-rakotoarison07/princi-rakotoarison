@@ -8,7 +8,7 @@
   --color-sable-brown: #4A3B32;
   --color-sable-brown-light: #6A5B52;
   
-  --font-sans: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-sans), 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 @layer base {
@@ -96,22 +96,27 @@
 
 .animate-slow-spin {
   animation: slow-spin 20s linear infinite;
+  will-change: transform;
 }
 
 .animate-slow-spin-reverse {
   animation: slow-spin-reverse 25s linear infinite;
+  will-change: transform;
 }
 
 .animate-float {
   animation: float-subtle 6s ease-in-out infinite;
+  will-change: transform;
 }
 
 .animate-float-slow {
   animation: float-slower 8s ease-in-out infinite;
+  will-change: transform;
 }
 
 .animate-float-fast {
   animation: float-faster 5s ease-in-out infinite;
+  will-change: transform;
 }
 
 @keyframes fadeIn {
@@ -127,6 +132,7 @@
 
 .fadeIn {
   animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
 }
 
 

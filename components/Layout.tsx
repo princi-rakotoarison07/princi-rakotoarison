@@ -1,8 +1,15 @@
 import { ReactNode, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaArrowUp } from 'react-icons/fa';
+import { Outfit } from 'next/font/google';
 import ProgressBar from './ProgressBar';
 import Navbar from './Navbar';
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-sans',
+});
 
 interface LayoutProps {
   children: ReactNode;
@@ -28,11 +35,12 @@ export default function Layout({ children }: LayoutProps) {
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
+      // smooth scroll to top
     });
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-sable-white text-sable-brown selection:bg-sable-terracotta selection:text-sable-white">
+    <div className={`${outfit.variable} font-sans min-h-screen flex flex-col justify-between bg-sable-white text-sable-brown selection:bg-sable-terracotta selection:text-sable-white`}>
       {/* Top scroll progress */}
       <ProgressBar />
 
