@@ -76,15 +76,16 @@ export default function Projects() {
               >
                 {/* Composite Card Image Container */}
                 <div className="relative h-[240px] w-full overflow-hidden bg-sable-beige rounded-t-2xl border-b border-sable-terracotta/10">
-                  {/* First image (Left/Top) */}
+                   {/* First image (Left/Top) */}
                   <div className="absolute top-[-10px] left-[-10px] w-[65%] h-[90%] rotate-[-3deg] transition-all duration-500 ease-out group-hover:rotate-0 group-hover:translate-x-[-5px] group-hover:translate-y-[-5px] shadow-[5px_5px_15px_rgba(0,0,0,0.12)] rounded-xl overflow-hidden border border-sable-terracotta/10">
                     <Image
                       src={project.images[0]}
-                      alt={`${project.title} 1`}
+                      alt={`Capture d'écran principale de ${project.title}`}
                       fill
-                      sizes="(max-w-768px) 50vw, 25vw"
+                      sizes="(max-w-768px) 90vw, (max-w-1024px) 45vw, 30vw"
                       className="object-cover"
                       loading="lazy"
+                      quality={75}
                     />
                   </div>
 
@@ -92,11 +93,12 @@ export default function Projects() {
                   <div className="absolute bottom-[-10px] right-[-10px] w-[60%] h-[85%] rotate-[3deg] transition-all duration-500 ease-out group-hover:rotate-0 group-hover:translate-x-[5px] group-hover:translate-y-[5px] shadow-[-5px_5px_15px_rgba(0,0,0,0.12)] rounded-xl overflow-hidden border border-sable-terracotta/10">
                     <Image
                       src={project.images[1] || project.images[0]}
-                      alt={`${project.title} 2`}
+                      alt={`Capture d'écran secondaire de ${project.title}`}
                       fill
-                      sizes="(max-w-768px) 50vw, 25vw"
+                      sizes="(max-w-768px) 90vw, (max-w-1024px) 45vw, 30vw"
                       className="object-cover"
                       loading="lazy"
+                      quality={75}
                     />
                   </div>
 
@@ -199,9 +201,9 @@ export default function Projects() {
                 src={activeProject.images[currentImageIndex]}
                 alt={`${activeProject.title} - ${currentImageIndex + 1}`}
                 fill
-                sizes="100vw"
+                sizes="(max-w-1024px) 100vw, 1024px"
                 className="object-contain"
-                priority
+                quality={75}
               />
 
               {/* Close Button */}
