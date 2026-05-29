@@ -30,20 +30,28 @@ export default function Navbar() {
         setIsScrolled(false);
       }
 
-      // ScrollSpy implementation
-      const scrollPosition = window.scrollY + 120; // offset for nav height
+      // Bottom of the page fallback
+      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60;
+      if (isAtBottom) {
+        setActiveSection('contact');
+        return;
+      }
+
+      // ScrollSpy implementation using viewport bounding client rect
+      const offset = 150; // offset for nav height
+      let currentSection = 'hero';
 
       for (const link of navLinks) {
         const sectionId = link.href.substring(1);
         const el = document.getElementById(sectionId);
         if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(sectionId);
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= offset && rect.bottom > offset) {
+            currentSection = sectionId;
           }
         }
       }
+      setActiveSection(currentSection);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
