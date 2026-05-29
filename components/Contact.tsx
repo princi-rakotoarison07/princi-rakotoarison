@@ -29,11 +29,46 @@ export default function Contact() {
     e.preventDefault();
     setStatus('sending');
 
+    let formspreeFormId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID;
+
+    if (formspreeFormId) {
+      formspreeFormId = formspreeFormId.trim();
+      // If the user configured the full URL instead of just the ID, extract the ID segment
+      if (formspreeFormId.includes('formspree.io/f/')) {
+        const parts = formspreeFormId.split('formspree.io/f/');
+        formspreeFormId = parts[parts.length - 1];
+      }
+    }
+
+    if (!formspreeFormId || formspreeFormId === 'YOUR_FORMSPREE_FORM_ID') {
+      console.warn("Formspree Form ID is not configured in .env.local");
+      // Fallback to local mock contact api if env variable is missing
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+
+        if (response.ok) {
+          setStatus('success');
+          setFormData({ name: '', email: '', subject: '', message: '' });
+        } else {
+          setStatus('error');
+        }
+      } catch {
+        setStatus('error');
+      }
+      return;
+    }
+
     try {
-      // Mock sending email or post to server
-      const response = await fetch('/api/contact', {
+      const response = await fetch(`https://formspree.io/f/${formspreeFormId}`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
         body: JSON.stringify(formData),
       });
 

@@ -16,6 +16,7 @@ export interface ExperienceItem {
   position: string;
   duration: string;
   description: string;
+  technologies?: string[];
 }
 
 export interface EducationItem {
@@ -66,6 +67,7 @@ export interface ProjectItem {
   stacks: string[];
   images: string[];
   category: "web" | "mobile" | "design";
+  link?: string;
 }
 
 export interface SocialLink {
@@ -100,52 +102,39 @@ export const resumeData: ResumeData = {
     description: "Voici un aperçu de mon parcours professionnel, mettant en avant mes projets et collaborations.",
     items: [
       {
-        company: "RoadSignal",
-        position: "Développeur Fullstack – Signalement routier (Web & Mobile)",
+        company: "Signalement Routier",
+        position: "Développeur Fullstack – Web & Mobile",
         duration: "déc. 2025 - fév. 2026",
-        description: "Conception et développement d'une application de signalement d'incidents routiers, couplée à un dashboard d'administration. Synchro temps réel avec Firebase, cartographie avancée, et mode hors ligne pour une expérience fluide sur le terrain."
+        description: "J'ai conçu et développé un système de signalement d'incidents routiers, avec une application mobile (Ionic Vue) et un dashboard administratif (Angular) - synchronisation temps réel via Firebase, cartographie avancée et mode hors ligne intégré.",
+        technologies: ["Ionic Vue", "Angular", "Firebase", "TypeScript", "HTML5/CSS3"]
       },
       {
-        company: "Alumni Platform (ITU Innovation Week)",
-        position: "Développeur Fullstack – Hackathon",
+        company: "ITU Innovation Week",
+        position: "Développeur Fullstack – Hackathon Platform Alumni",
         duration: "fév. 2026",
-        description: "Participation à l'ITU Innovation Week : création d'une plateforme alumni en moins d'une semaine. Travail en équipe sous contrainte de temps, avec un framework Java propriétaire assurant la sécurité du backend et la génération du frontend."
+        description: "J'ai participé à l'ITU Innovation Week, un hackathon universitaire autour de la conception d'une plateforme alumni - conception, développement et livraison sous contrainte de temps, en équipe, avec un framework Java propriétaire gérant le backend sécurisé et le frontend.",
+        technologies: ["Java", "Framework Propriétaire", "Git", "Collaboration Agilité"]
       },
       {
         company: "TTOP m’ITantana",
-        position: "Développeur Fullstack – Gestion achat/vente/stock",
+        position: "Développeur Fullstack – Gestion Achat / Vente / Stock",
         duration: "nov. 2025 - déc. 2025",
-        description: "Réalisation d'une application web fullstack (Vue.js + Spring Boot) pour gérer les cycles d'achats, ventes et stocks. Tableaux de bord KPI, alertes de réapprovisionnement, et module d'analyse IA via Mistral."
+        description: "J'ai conçu et développé une application web fullstack (Vue.js + Spring Boot) gérant les cycles achats, ventes et stock - avec tableaux de bord KPI, alertes de réapprovisionnement et un module d'analyse IA via Mistral.",
+        technologies: ["Vue.js", "Spring Boot", "Mistral AI", "Java", "JavaScript", "MySQL"]
       },
       {
-        company: "MATECHMAD – Garage auto",
+        company: "MATECHMAD",
         position: "Développeur Laravel",
         duration: "sept. 2025 - oct. 2025",
-        description: "Développement d'une application web de gestion pour un garage : suivi des stocks de pièces, ordres de réparation et ventes, avec traçabilité complète des mouvements."
+        description: "J'ai développé une application web de gestion couvrant le stock de pièces, les ordres de réparation et les ventes - avec traçabilité complète des mouvements.",
+        technologies: ["Laravel", "PHP", "MySQL", "Bootstrap", "JavaScript"]
       },
       {
         company: "Cuisine'Vital",
         position: "Développeur Fullstack (NestJS & React)",
         duration: "juin 2025 - juil. 2025",
-        description: "Création d'une application de gestion complète pour un service de livraison de repas. Suivi en temps réel des commandes et livraisons, gestion des stocks, menus et utilisateurs avec contrôle d'accès par rôles."
-      },
-      {
-        company: "Investissement Frontalière",
-        position: "Développeur WordPress",
-        duration: "juin 2025",
-        description: "Optimisation des performances et refonte de la template d’un site vitrine afin d’améliorer l’expérience utilisateur et la rapidité d’affichage."
-      },
-      {
-        company: "Projet académique – Prédiction immobilière",
-        position: "Développeur Python / Django",
-        duration: "déc. 2024",
-        description: "Développement d’un modèle de régression linéaire pour estimer le loyer des maisons et le prix des surfaces à partir de fichiers CSV. Intégration d’une carte open source permettant une sélection interactive des lieux et une prédiction à la volée."
-      },
-      {
-        company: "Guycom",
-        position: "Développeur WordPress",
-        duration: "déc. 2024 - mars 2025",
-        description: "Déploiement du site sur un serveur en ligne, configuration complète de l’hébergement et mise en production pour assurer l’accessibilité aux utilisateurs."
+        description: "En tant que Développeur Fullstack, j'ai conçu une application de gestion complète pour Cuisine'Vital, intégrant un suivi en temps réel des commandes et des livraisons, tout en assurant la gestion des stocks, menus et utilisateurs selon les rôles définis.",
+        technologies: ["NestJS", "React", "Node.js", "PostgreSQL", "Tailwind CSS"]
       }
     ]
   },
@@ -241,76 +230,5 @@ export const services: ServiceItem[] = [
   }
 ];
 
-export const projectsList: ProjectItem[] = [
-  {
-    title: "SmartSaha",
-    desc: "Application mobile intelligente de gestion agricole. Permet de suivre les activités, optimiser la productivité et intègre une place de marché pour les ventes et enchères.",
-    stacks: ["React Native", "TypeScript", "NativeWind", "Django", "Supabase"],
-    images: [
-      "/img/projectsImg/smartSaha/1.jpg",
-      "/img/projectsImg/smartSaha/2.jpg",
-      "/img/projectsImg/smartSaha/3.jpg",
-      "/img/projectsImg/smartSaha/4.jpg",
-      "/img/projectsImg/smartSaha/5.jpg",
-    ],
-    category: "mobile",
-  },
-  {
-    title: "E-Kaly",
-    desc: "Application mobile de gestion de commandes de restaurant avec synchronisation en temps réel entre clients, cuisine et serveurs pour fluidifier les flux de travail.",
-    stacks: ["React Native", "MongoDB", "Node.js"],
-    images: [
-      "/img/projectsImg/ekaly/2.png",
-      "/img/projectsImg/ekaly/1.png",
-      "/img/projectsImg/ekaly/3.png",
-    ],
-    category: "mobile",
-  },
-  {
-    title: "Garazy",
-    desc: "Système web de gestion de garage automobile gérant les rendez-vous, le suivi des réparations et améliorant la communication entre mécaniciens et clients.",
-    stacks: ["Angular", "Express.js", "MongoDB"],
-    images: [
-      "/img/projectsImg/garazy/1.jpg",
-    ],
-    category: "web",
-  },
-  {
-    title: "Gestionnaire de Matériels",
-    desc: "Application interne de gestion de parc matériel développée pour le Ministère de la Pêche et de l'Économie Bleue pour optimiser le suivi et l'organisation des ressources.",
-    stacks: ["React", "Node.js", "MongoDB"],
-    images: [
-      "/img/projectsImg/logistique/1.png",
-      "/img/projectsImg/logistique/2.png",
-    ],
-    category: "web",
-  },
-  {
-    title: "BioMada",
-    desc: "Maquettes UI/UX d'une plateforme de gestion et place de marché agricole collaborative, mettant en avant un design épuré, intuitif et centré sur l'utilisateur.",
-    stacks: ["Figma", "Adobe Illustrator"],
-    images: [
-      "/img/projectsImg/bioMada/1.png",
-    ],
-    category: "design",
-  },
-  {
-    title: "FormaProd",
-    desc: "Projet de design axé sur la création d'une interface esthétique et ergonomique pour une entreprise de décoration d'intérieur fictive.",
-    stacks: ["Figma", "Adobe Illustrator"],
-    images: [
-      "/img/projectsImg/madeco/2.png",
-      "/img/projectsImg/madeco/1.png",
-    ],
-    category: "design",
-  },
-  {
-    title: "Design de Système Académique",
-    desc: "Conception complète d'un portail éducatif moderne pour la gestion des cours, des devoirs et de l'administration scolaire pour les étudiants et enseignants.",
-    stacks: ["Figma", "Adobe Illustrator"],
-    images: [
-      "/img/projectsImg/school/1.png",
-    ],
-    category: "design",
-  },
-];
+import { projectsList } from './projects';
+export { projectsList };
